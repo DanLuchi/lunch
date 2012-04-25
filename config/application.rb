@@ -61,5 +61,8 @@ module Lunch
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # Don't access DB or load models when procompiling assets as suggested by Devise setup for Heroku
+    config.assets.initialize_on_precompile = false
   end
 end
