@@ -1,7 +1,7 @@
 Lunch::Application.routes.draw do
   devise_for :users
 
-  root :to => "public#index"
+  root :to => "application#index"
 
   resources :users
   resources :restaurants
