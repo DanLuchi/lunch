@@ -1,0 +1,7 @@
+- form_for @lunch do |f|
+  %ul
+    - 3.times do
+      %li.lunch_restaurant
+        %label{:for => 'lunch_restaurant' }
+        = select 'lunch', 'restaurant', @restaurants, :prompt => '- Please Select -'
+  = f.submit
