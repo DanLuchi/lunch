@@ -53,6 +53,31 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  # POST /restaurants/1/add
+  # POST /restaurants/1/add.json
+  def add
+    @User_restaurant = UserRestaurant.create(:user_id => current_user, :restaurant_id => params[:id])
+    p @user_restaurant
+
+    respond_to do |format|
+      format.html { redirect_to restaurants_url }
+      format.json { head :no_content }
+    end
+  end
+
+  # POST /restaurants/1/remove
+  # POST /restaurants/1/remove.json
+  def remove
+    @user_restaurant = UserRestaurant.where("restaurant_id = ? AND user_id = ?", params[:id], current_user)
+    p @user_restaurant
+    @user_restaurant.destroy
+
+    respond_to do |format|
+      format.html { redirect_to restaurants_url }
+      format.json { head :no_content }
+    end
+  end
+
   # PUT /restaurants/1
   # PUT /restaurants/1.json
   def update

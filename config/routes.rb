@@ -1,8 +1,10 @@
 Lunch::Application.routes.draw do
-  devise_for :users
-
   root :to => "application#index"
 
   resources :users
+  devise_for :users
+
   resources :restaurants
+  match "/restaurants/:id/add" => "restaurants#add"
+  match "/restaurants/:id/remove" => "restaurants#remove"
 end

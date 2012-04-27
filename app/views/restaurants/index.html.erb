@@ -13,6 +13,8 @@
     <td><%= restaurant.name %></td>
     <td><%= link_to 'Show', restaurant %></td>
     <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+    <td><%= link_to 'Add', "/restaurants/#{restaurant.id}/add", method: :post%></td>
+    <td><%= link_to 'Remove', "/restaurants/#{restaurant.id}/remove", method: :post %></td>
     <td><%= link_to 'Destroy', restaurant, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
