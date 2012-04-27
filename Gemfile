@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'haml'
 gem 'thin'
+gem 'oauth'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
